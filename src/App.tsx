@@ -1,5 +1,7 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTop';
@@ -35,7 +37,7 @@ function App() {
         <ScrollToTop />
         <ScrollToTopButton />
         <Navbar />
-        
+
         <Suspense fallback={<Loading />}>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -46,8 +48,10 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-        
+
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </div>
     </Router>
   );
