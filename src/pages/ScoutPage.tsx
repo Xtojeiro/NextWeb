@@ -81,23 +81,29 @@ const ScoutPage = () => {
                 className="rounded-3xl shadow-2xl border-4 border-[#1e293b] transform rotate-1 hover:rotate-0 transition-all duration-500"
               />
             
-            {/* Floating Card */}
-            <div className="absolute bottom-10 -right-6 bg-[#1e293b]/90 backdrop-blur-md p-4 rounded-2xl border border-[#334155] shadow-xl w-64">
-               <div className="flex items-start gap-3">
-                  <div className="w-12 h-12 bg-gray-600 rounded-lg bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80)'}}></div>
-                  <div>
-                     <p className="text-white font-bold text-sm">Novo Relatório</p>
-                     <p className="text-[#94a3b8] text-xs">João Neves (MD)</p>
-                     <div className="flex gap-1 mt-1">
-                        <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                        <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                        <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                        <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                        <Star size={12} className="text-yellow-400 fill-yellow-400" />
-                     </div>
-                  </div>
-               </div>
-            </div>
+             {/* Floating Card */}
+             <motion.div 
+               initial={{ opacity: 0, x: 20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.4 }}
+               className="absolute bottom-10 -right-6 bg-[#1e293b]/90 backdrop-blur-md p-4 rounded-2xl border border-[#334155] shadow-xl w-64"
+             >
+                <div className="flex items-start gap-3">
+                   <div className="w-12 h-12 bg-gray-600 rounded-lg bg-cover bg-center" style={{backgroundImage: 'url(https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80)'}}></div>
+                   <div>
+                      <p className="text-white font-bold text-sm">Novo Relatório</p>
+                      <p className="text-[#94a3b8] text-xs">João Neves (MD)</p>
+                      <div className="flex gap-1 mt-1">
+                         <Star size={12} className="text-yellow-400 fill-yellow-400" />
+                         <Star size={12} className="text-yellow-400 fill-yellow-400" />
+                         <Star size={12} className="text-yellow-400 fill-yellow-400" />
+                         <Star size={12} className="text-yellow-400 fill-yellow-400" />
+                         <Star size={12} className="text-yellow-400 fill-yellow-400" />
+                      </div>
+                   </div>
+                </div>
+             </motion.div>
           </motion.div>
         </div>
       </section>

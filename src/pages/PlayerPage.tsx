@@ -80,7 +80,13 @@ const PlayerPage = () => {
                 loading="lazy"
                 className="rounded-3xl shadow-2xl border-4 border-[#1e293b] transform rotate-2 hover:rotate-0 transition-all duration-500"
               />
-            <div className="absolute -bottom-6 -left-6 bg-[#1e293b] p-6 rounded-2xl border border-[#334155] shadow-xl max-w-xs">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="absolute -bottom-6 -left-6 bg-[#1e293b] p-6 rounded-2xl border border-[#334155] shadow-xl max-w-xs"
+            >
               <div className="flex items-center gap-4 mb-3">
                 <div className="w-10 h-10 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center font-bold">
                   9.2
@@ -93,7 +99,7 @@ const PlayerPage = () => {
               <div className="h-1.5 w-full bg-[#334155] rounded-full overflow-hidden">
                 <div className="h-full bg-green-500 w-[92%]"></div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>

@@ -80,15 +80,21 @@ const CoachPage = () => {
                 loading="lazy"
                 className="rounded-3xl shadow-2xl border-4 border-[#1e293b] transform -rotate-2 hover:rotate-0 transition-all duration-500"
               />
-            <div className="absolute -top-6 -right-6 bg-[#1e293b] p-6 rounded-2xl border border-[#334155] shadow-xl">
-              <div className="flex -space-x-3 mb-3">
-                 {[1,2,3,4].map(i => (
-                   <div key={i} className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-gray-600"></div>
-                 ))}
-                 <div className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">+24</div>
-              </div>
-              <p className="text-white font-bold text-center">Plantel Completo</p>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="absolute -top-6 -right-6 bg-[#1e293b] p-6 rounded-2xl border border-[#334155] shadow-xl"
+            >
+               <div className="flex -space-x-3 mb-3">
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-gray-600"></div>
+                  ))}
+                  <div className="w-10 h-10 rounded-full border-2 border-[#1e293b] bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">+24</div>
+               </div>
+               <p className="text-white font-bold text-center">Plantel Completo</p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
