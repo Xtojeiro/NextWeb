@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -91,11 +91,11 @@ const AppShowcase = () => {
                         </div>
                         <div className="h-10 bg-white/5 rounded mt-2"></div>
                      </div>
-                      <div className="h-40 bg-white/10 rounded-xl backdrop-blur-sm border border-white/5 p-3 flex items-end gap-2">
-                         {[1,2,3,4,5].map(i => (
-                            <div key={i} className="flex-1 bg-white/20 rounded-t" style={{height: `${[40, 65, 45, 75, 55][i-1]}%`}}></div>
-                         ))}
-                      </div>
+                       <div className="h-40 bg-white/10 rounded-xl backdrop-blur-sm border border-white/5 p-3 flex items-end gap-2">
+                          {[40, 65, 45, 75, 55].map((height, i) => (
+                             <div key={i} className="flex-1 bg-white/20 rounded-t" style={{height: `${height}%`}}></div>
+                          ))}
+                       </div>
                   </div>
 
                 </div>
