@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Link } from 'react-router';
 import { User, ClipboardList, Search } from 'lucide-react';
 
 const UserTypes = () => {
@@ -22,13 +21,12 @@ const UserTypes = () => {
         'Calendário de jogos e eventos da equipa',
         'Chat direto com treinadores',
         'Perfil público ou privado',
-        'Acompanhamento de evolução com gráficos'
+        'Acompanhamento de evolução com gráficos',
       ],
       color: 'text-blue-400',
       bgColor: 'bg-blue-500',
       borderColor: 'border-blue-500',
       image: "https://images.unsplash.com/photo-1739550635585-484633b21450?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjB0cmFpbmluZyUyMHBob25lJTIwYXBwfGVufDF8fHx8MTc3MDkwNjY5NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: '/player'
     },
     coach: {
       title: 'Para Treinadores',
@@ -40,13 +38,12 @@ const UserTypes = () => {
         'Dashboard de estatísticas da equipa',
         'Notas privadas sobre cada atleta',
         'Rankings e comparações multi-atleta',
-        'Exportação de relatórios (PDF/CSV)'
+        'Exportação de relatórios (PDF/CSV)',
       ],
       color: 'text-emerald-400',
       bgColor: 'bg-emerald-500',
       borderColor: 'border-emerald-500',
       image: "https://images.unsplash.com/photo-1550378492-4903c3e172a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjb2FjaCUyMHVzaW5nJTIwdGFibGV0fGVufDF8fHx8MTc3MDkwNjY5NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: '/coach'
     },
     scout: {
       title: 'Para Olheiros',
@@ -55,14 +52,13 @@ const UserTypes = () => {
         'Pesquisa avançada de jogadores',
         'Visualização de perfis e estatísticas públicas',
         'Sistema de seguir jogadores favoritos',
-        'Relatórios de desempenho detalhados'
+        'Relatórios de desempenho detalhados',
       ],
       color: 'text-purple-400',
       bgColor: 'bg-purple-500',
       borderColor: 'border-purple-500',
       image: "https://images.unsplash.com/photo-1527842695033-709d0f9fc38d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzb2NjZXIlMjBzY291dCUyMHRha2luZyUyMG5vdGVzfGVufDF8fHx8MTc3MDkwNjY5NHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      link: '/scout'
-    }
+    },
   };
 
   return (
@@ -77,7 +73,6 @@ const UserTypes = () => {
           </p>
         </div>
 
-        {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {tabs.map((tab) => (
             <button
@@ -95,7 +90,6 @@ const UserTypes = () => {
           ))}
         </div>
 
-        {/* Content Area */}
         <div className="relative min-h-[500px] bg-[#1e293b] border border-[#334155] rounded-3xl p-8 md:p-12 overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
@@ -106,7 +100,6 @@ const UserTypes = () => {
               transition={{ duration: 0.3 }}
               className="grid lg:grid-cols-2 gap-12 items-center"
             >
-              {/* Text Info */}
               <div>
                 <div className={`inline-block px-3 py-1 rounded-lg text-sm font-bold mb-4 bg-slate-800 ${content[activeTab].color}`}>
                   {content[activeTab].title}
@@ -126,16 +119,16 @@ const UserTypes = () => {
                   ))}
                 </ul>
 
-                <Link to={content[activeTab].link}>
-                  <button className={`px-6 py-3 rounded-xl font-semibold text-white ${content[activeTab].bgColor} hover:opacity-90 transition-opacity`}>
-                    Saber mais
-                  </button>
-                </Link>
+                <a
+                  href="mailto:nextapp@email.com"
+                  className={`inline-flex px-6 py-3 rounded-xl font-semibold text-white ${content[activeTab].bgColor} hover:opacity-90 transition-opacity`}
+                >
+                  Contactar
+                </a>
               </div>
 
-              {/* Image / Mockup Area */}
               <div className="relative h-[300px] lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-[#334155]">
-                <div className={`absolute inset-0 bg-gradient-to-t from-[#1e293b] to-transparent z-10 opacity-60`}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b] to-transparent z-10 opacity-60"></div>
                 <img 
                   src={content[activeTab].image} 
                   alt={content[activeTab].title} 
